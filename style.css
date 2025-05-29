@@ -7,48 +7,46 @@
   font-family: "Roboto Mono", monospace;
 }
 
+body {
+  background-color: #000;
+  color: #aed0d0;
+}
+
+/* Main Section */
 .main {
   min-height: 100vh;
-  position: relative;
   width: 100%;
   background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 50px;
 }
 
-.main .image-container {
+/* Assistant Image and Title */
+.image-container {
   padding: 10px;
+  text-align: center;
 }
 
-.main .image-container .image {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main .image-container .image img {
+.image-container .image img {
   width: 350px;
-  align-items: center;
 }
 
-
-.main .image-container h1 {
+.image-container h1 {
   color: #00bcd4;
-  text-align: center;
-  margin-bottom: 10px;
   font-size: 40px;
+  margin-bottom: 10px;
 }
 
-.main .image-container p {
+.image-container p {
   color: #324042;
-  text-align: center;
   margin-bottom: 40px;
 }
 
-.main .input {
+/* Voice Input Area */
+.input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,28 +54,97 @@
   height: 50px;
   border-radius: 20px;
   background: rgb(202 253 255 / 50%);
+  margin-bottom: 30px;
 }
 
-.main .input .talk {
+.input .talk {
   background: transparent;
   outline: none;
   border: none;
   width: 50px;
   height: 50px;
+  font-size: 15px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
-  cursor: pointer;
 }
 
-.main .input .talk i {
+.input .talk i {
   font-size: 20px;
   color: #aed0d0;
 }
 
-.main .input .content {
+.input .content {
   color: #aed0d0;
   font-size: 15px;
-  margin-right: 20px;
+  margin-left: 15px;
+}
+
+/* Features Section */
+.features-title {
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #00bcd4;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.feature-box {
+  background: rgba(0, 188, 212, 0.08);
+  color: #aed0d0;
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.05);
+  flex: 0 0 calc(25% - 20px); /* 4 per row with spacing */
+  min-width: 200px;
+  box-sizing: border-box;
+}
+
+.feature-box:hover {
+  background: rgba(0, 188, 212, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2);
+}
+
+.feature-box p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #80cfd0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .feature-box {
+    flex: 0 0 calc(33.33% - 20px); /* 3 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-box {
+    flex: 0 0 calc(50% - 20px); /* 2 per row */
+  }
+}
+
+@media (max-width: 400px) {
+  .feature-box {
+    flex: 0 0 100%; /* 1 per row */
+  }
 }
